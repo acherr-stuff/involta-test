@@ -1,0 +1,18 @@
+@import "mixins";
+@import "layout";
+@import "news";
+@import "animation";
+
+@font-face {
+  font-family: "Philosopher";
+  src: url("../assets/fonts/Philosopher-Regular.ttf");
+}
+@font-face {
+  font-family: "NotoSerif";
+  src: url("../assets/fonts/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("../assets/fonts/NotoSans-Regular.ttf");
+}

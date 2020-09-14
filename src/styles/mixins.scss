@@ -1,0 +1,25 @@
+$laptop-breakpoint: 1200px; //брейкпонт для окна 1200px 
+$tablet-breakpoint: 1024px; //брейкпонт для окна 1024px 
+$phone-breakpoint: 768px; //брейкпонт для окна 768px 
+
+
+// медиа-запрос для экранов от 1024px до 1200px
+@mixin laptop {
+  @media only screen and (min-width: $tablet-breakpoint) and (max-width: $laptop-breakpoint - 1) {
+    @content;
+  }
+}
+
+// медиа-запрос для экранов от 768px до 1024px
+@mixin tablet {
+  @media only screen and (min-width: $phone-breakpoint) and (max-width: $tablet-breakpoint - 1) {
+    @content;
+  }
+}
+
+// медиа-запрос для экранов до 768px 
+@mixin phone {
+  @media only screen and (max-width: $phone-breakpoint - 1) {
+    @content;
+  }
+}

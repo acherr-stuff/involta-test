@@ -1,0 +1,210 @@
+$desktop-width: 1200px;
+$section-font: Philosopher;
+$news-item-width: 260px;
+$desktop-margin: (($desktop-width)-($news-item-width*4))/8;
+$laptop-margin: (($tablet-width)-($news-item-width*3))/6;
+//
+// Контейнер с новостями
+//
+.news-container,.news-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+//для 3 колонок показываем только 9 элементов
+#p10, #p11, #p12 {
+  @include laptop{display: none;}
+}
+//
+// Новость
+//
+.news-item {
+  background: #f1f1f1;
+  width: $news-item-width;
+  height: 400px;
+  margin: 0 $desktop-margin 40px;
+
+  @include laptop {
+    margin: 0 $laptop-margin 40px;
+    #p10,#p11,#p12 {
+      display:none;
+    }
+  }
+
+  @include tablet {
+    width: ($wide-mobile-width / 2);
+    margin: 0; // Отступы не нужны, так как их сделает swiper
+  }
+
+  @include phone {
+    width: $mobile-width;
+    margin: 0;
+  }
+
+  //
+  // Изображение новости
+  //
+  .news-item__image {
+    margin: 0;
+    @include phone {
+      height: 350px;
+    }
+    @include tablet {
+      height: 230px;
+    }
+    img {
+      max-height: 185px;
+      max-width: $news-item-width;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      @include tablet {
+        max-height: 87%;
+        max-width: 70%;
+        margin: 25px 57px;
+      }
+
+      @include phone {
+        max-height: 285px;
+        max-width: 370px;
+        margin: 50px 55px;
+      }
+    }
+  }
+
+  //
+  // Секция новости
+  //
+  .news-item__section {
+    padding: 10px 0 0 5px;
+    margin:0;
+    @include phone {
+      text-align: center;
+       padding-left: 50px;
+        padding-right: 50px;
+    }
+    @include tablet {
+      text-align: center;
+      padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    a {
+      background: url(../assets/images/icon.png) no-repeat left center; 
+      font-family: Philosopher;
+      text-decoration: none;
+      color: #b3504b;
+      font-weight: bold;
+      padding: 0 5px 0 20px;
+    }
+    a:hover {
+      color: #752521;
+    }
+  }
+
+  //
+  // Заголовок новости
+  //
+  .news-item__header {
+    padding: 10px 0 0 5px;
+
+    h1 {
+      color: #69513e;
+      font-size: 16px;
+      font-family: "NotoSerif";
+      margin: 0;
+      font-weight: normal;
+      text-align: left;
+      @include phone {
+        font-size: 18px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      @include tablet {
+        font-size: 17px;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+
+  //
+  // Краткое содержимое новости
+  //
+  .news-item__summary {
+    padding: 15px 0 0 5px;
+    height: 95px;
+    p {
+      color: #616161;
+      font-size: 13px;
+      font-family: "NotoSans";
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+      text-align: left;
+      line-height: 150%;
+
+      @include phone {
+        text-align: justify;
+        font-size: 14px;
+        padding: 0 50px;
+      }
+
+      @include tablet {
+        text-align: justify;
+        font-size: 14px;
+        padding: 0 25px;
+      }
+    }
+  }
+
+  //
+  // Дата новости
+  //
+  .news-item__date {
+    padding: 5px 0 5px 5px;
+    p {
+      color: #ababab;
+      font-size: 13px;
+      font-family: "NotoSans";
+      margin: 0;
+      text-align: left;
+      line-height: 150%;
+
+      @include tablet {
+        text-align: center;
+        // font-size: 14px;
+      }
+      @include phone {
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+}
+//
+// Исправление проблем со Swiper
+//
+.swiper-container {
+  padding-top: 20px;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  margin: 0;
+}
