@@ -37,7 +37,8 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
   }
 
   @include phone {
-    width: $mobile-width;
+    // width: $mobile-width;
+    width: 100%;
     margin: 0;
   }
 
@@ -45,9 +46,12 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
   // Изображение новости
   //
   .news-item__image {
-    margin: 0;
+    // margin: 0;
+    
     @include phone {
-      height: 350px;
+      height: auto;
+      width: 80%;
+      margin: 0 10%;
     }
     @include tablet {
       height: 230px;
@@ -65,9 +69,10 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
       }
 
       @include phone {
-        max-height: 285px;
-        max-width: 370px;
-        margin: 50px 55px;
+        max-height: 385px;
+        max-width: 100%;
+        margin: 50px 0 10px 0;
+
       }
     }
   }
@@ -80,8 +85,8 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
     margin:0;
     @include phone {
       text-align: center;
-       padding-left: 50px;
-        padding-right: 50px;
+      padding-left: 10%;
+      padding-right: 10%;
     }
     @include tablet {
       text-align: center;
@@ -117,8 +122,8 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
       text-align: left;
       @include phone {
         font-size: 18px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 10%;
+        padding-right: 10%;
       }
       @include tablet {
         font-size: 17px;
@@ -134,6 +139,9 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
   .news-item__summary {
     padding: 15px 0 0 5px;
     height: 95px;
+    @include phone {
+      height: auto;
+    }
     p {
       color: #616161;
       font-size: 13px;
@@ -146,7 +154,8 @@ $laptop-margin: (($tablet-width)-($news-item-width*3))/6;
       @include phone {
         text-align: justify;
         font-size: 14px;
-        padding: 0 50px;
+        padding: 0 10%;
+
       }
 
       @include tablet {

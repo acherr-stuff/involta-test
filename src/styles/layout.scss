@@ -35,7 +35,12 @@ $mobile-width: 480px;
     width: $wide-mobile-width;
   }
 
+  // @include phone {
+  //   width: $mobile-width;
+    
+  // }
   @include phone {
-    width: $mobile-width;
+  width: calc(100% - 40px);
+  margin-left: 20px;
   }
 }
